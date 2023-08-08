@@ -1,7 +1,7 @@
 <h1 align="center">Тестовое задание - "Заметки"</h1
 
-[![Build and Deploy Production](https://github.com/wowblvck/test-notes/actions/workflows/production.yml/badge.svg)](https://github.com/wowblvck/test-notes/actions/workflows/production.yml)
-[![Build and Deploy Development](https://github.com/wowblvck/test-notes/actions/workflows/development.yml/badge.svg)](https://github.com/wowblvck/test-notes/actions/workflows/development.yml)
+[![Build and Deploy Production](https://github.com/wowblvck/notes-test/actions/workflows/production.yml/badge.svg)](https://github.com/wowblvck/notes-test/actions/workflows/production.yml)
+[![Build and Deploy Development](https://github.com/wowblvck/notes-test/actions/workflows/development.yml/badge.svg)](https://github.com/wowblvck/notes-test/actions/workflows/development.yml)
 
 > Простое приложение для создания и редактирования заметок. В качестве хранилища используется local storage.
 
