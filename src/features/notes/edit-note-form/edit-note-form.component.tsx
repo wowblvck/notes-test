@@ -1,4 +1,4 @@
-import { useAppSelector } from "@/store/app.hook";
+import { useAppSelector } from '@/store/app.hook';
 import {
   Button,
   Checkbox,
@@ -7,10 +7,10 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material";
-import { Controller, useForm } from "react-hook-form";
-import { Note } from "..";
-import { NoteActionTypes } from "../notes.reducer";
+} from '@mui/material';
+import { Controller, useForm, SubmitHandler } from 'react-hook-form';
+import { Note } from '..';
+import { NoteActionTypes } from '../notes.reducer';
 
 type FormValues = {
   title: string;
@@ -34,23 +34,18 @@ const EditNoteForm: React.FC<EditNoteFormProps> = ({ note, closeModal }) => {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     dispatch({
       type: NoteActionTypes.Update,
       payload: { ...data, id: note.id },
     });
-    reset({ body: "", title: "", important: false });
+    reset({ body: '', title: '', important: false });
     closeModal();
   };
 
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)}>
-      <Typography
-        id="modal-modal-title"
-        variant="h6"
-        component="h2"
-        marginBottom={2}
-      >
+      <Typography id="modal-modal-title" variant="h6" component="h2" marginBottom={2}>
         Редактировать записку
       </Typography>
       <Controller
@@ -94,14 +89,7 @@ const EditNoteForm: React.FC<EditNoteFormProps> = ({ note, closeModal }) => {
         render={({ field: { onChange, value, ref, ...field } }) => (
           <FormGroup>
             <FormControlLabel
-              control={
-                <Checkbox
-                  {...field}
-                  inputRef={ref}
-                  onChange={onChange}
-                  checked={value}
-                />
-              }
+              control={<Checkbox {...field} inputRef={ref} onChange={onChange} checked={value} />}
               label="Важная"
             />
           </FormGroup>

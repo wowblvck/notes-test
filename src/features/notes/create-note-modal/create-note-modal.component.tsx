@@ -1,17 +1,17 @@
-import { CSSObject } from "@emotion/react";
-import { Box, Fab, Modal } from "@mui/material";
-import { CreateNoteForm } from "..";
-import AddIcon from "@mui/icons-material/Add";
-import React from "react";
+import { CSSObject } from '@emotion/react';
+import { Box, Fab, Modal } from '@mui/material';
+import { CreateNoteForm } from '..';
+import AddIcon from '@mui/icons-material/Add';
+import React from 'react';
 
 const style: CSSObject = {
-  position: "fixed" as const,
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  position: 'fixed' as const,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   minWidth: 300,
-  bgcolor: "background.paper",
-  boxShadow: "24",
+  bgcolor: 'background.paper',
+  boxShadow: '24',
   p: 4,
 };
 
@@ -24,7 +24,7 @@ const CreateNoteModal = () => {
       <Fab
         color="primary"
         aria-label="add"
-        style={{ position: "fixed", bottom: "20px", right: "20px" }}
+        style={{ position: 'fixed', bottom: '20px', right: '20px' }}
         onClick={toggleModal}
       >
         <AddIcon />

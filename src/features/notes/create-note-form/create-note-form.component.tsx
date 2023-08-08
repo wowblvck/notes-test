@@ -6,11 +6,11 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material";
-import { Controller, useForm } from "react-hook-form";
-import { v4 as uuidv4 } from "uuid";
-import { useAppSelector } from "@/store/app.hook";
-import { NoteActionTypes } from "../notes.reducer";
+} from '@mui/material';
+import { Controller, useForm, SubmitHandler } from 'react-hook-form';
+import { v4 as uuidv4 } from 'uuid';
+import { useAppSelector } from '@/store/app.hook';
+import { NoteActionTypes } from '../notes.reducer';
 
 type FormValues = {
   title: string;
@@ -27,13 +27,13 @@ const CreateNoteForm: React.FC<CreateNoteFormProps> = ({ closeModal }) => {
 
   const { control, reset, handleSubmit } = useForm<FormValues>({
     defaultValues: {
-      body: "",
-      title: "",
+      body: '',
+      title: '',
       important: false,
     },
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     dispatch({
       type: NoteActionTypes.Add,
       payload: { ...data, id: uuidv4() },
@@ -44,12 +44,7 @@ const CreateNoteForm: React.FC<CreateNoteFormProps> = ({ closeModal }) => {
 
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)}>
-      <Typography
-        id="modal-modal-title"
-        variant="h6"
-        component="h2"
-        marginBottom={2}
-      >
+      <Typography id="modal-modal-title" variant="h6" component="h2" marginBottom={2}>
         Создать записку
       </Typography>
       <Controller
@@ -94,14 +89,7 @@ const CreateNoteForm: React.FC<CreateNoteFormProps> = ({ closeModal }) => {
         render={({ field: { ref, onChange, value, ...field } }) => (
           <FormGroup>
             <FormControlLabel
-              control={
-                <Checkbox
-                  {...field}
-                  onChange={onChange}
-                  checked={value}
-                  inputRef={ref}
-                />
-              }
+              control={<Checkbox {...field} onChange={onChange} checked={value} inputRef={ref} />}
               label="Важная"
             />
           </FormGroup>

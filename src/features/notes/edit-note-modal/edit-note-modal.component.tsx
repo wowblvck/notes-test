@@ -1,15 +1,15 @@
-import { CSSObject } from "@emotion/react";
-import { Box, Modal } from "@mui/material";
-import { EditNoteForm, Note } from "..";
+import { CSSObject } from '@emotion/react';
+import { Box, Modal } from '@mui/material';
+import { EditNoteForm, Note } from '..';
 
 const style: CSSObject = {
-  position: "fixed" as const,
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  position: 'fixed' as const,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   minWidth: 300,
-  bgcolor: "background.paper",
-  boxShadow: "24",
+  bgcolor: 'background.paper',
+  boxShadow: '24',
   p: 4,
 };
 

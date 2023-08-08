@@ -1,1 +1,1 @@
-export { default as CreateNoteModal } from "./create-note-modal.component";
+export { default as CreateNoteModal } from './create-note-modal.component';

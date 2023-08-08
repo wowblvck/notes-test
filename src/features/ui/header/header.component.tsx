@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
-import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
 
 const Header = () => {
   return (
