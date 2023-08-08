@@ -1,16 +1,15 @@
-import ActionMap from "@/utils/helperTypes";
-import { FilterControlState } from ".";
+import ActionMap from '@/utils/helperTypes';
+import { FilterControlState } from '.';
 
 export enum FilterActionTypes {
-  SetImportant = "SET_IMPORTANT_FILTER",
+  SetImportant = 'SET_IMPORTANT_FILTER',
 }
 
 type FilterPayload = {
   [FilterActionTypes.SetImportant]: boolean;
 };
 
-export type FilterActions =
-  ActionMap<FilterPayload>[keyof ActionMap<FilterPayload>];
+export type FilterActions = ActionMap<FilterPayload>[keyof ActionMap<FilterPayload>];
 
 const filterReducer = (state: FilterControlState, action: FilterActions) => {
   switch (action.type) {

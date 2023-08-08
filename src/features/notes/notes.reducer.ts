@@ -1,11 +1,11 @@
-import ActionMap from "@/utils/helperTypes";
-import { Note } from ".";
+import ActionMap from '@/utils/helperTypes';
+import { Note } from '.';
 
 export enum NoteActionTypes {
-  Add = "ADD_NOTE",
-  Set = "SET_NOTES",
-  Update = "UPDATE_NOTE",
-  Delete = "DELETE_NOTE",
+  Add = 'ADD_NOTE',
+  Set = 'SET_NOTES',
+  Update = 'UPDATE_NOTE',
+  Delete = 'DELETE_NOTE',
 }
 
 type NotePayload = {
@@ -27,9 +27,7 @@ const notesReducer = (state: Note[], action: NoteActions) => {
       return [...state, action.payload];
     case NoteActionTypes.Update: {
       const updatedNote = action.payload;
-      return state.map((note) =>
-        note.id === updatedNote.id ? updatedNote : note
-      );
+      return state.map((note) => (note.id === updatedNote.id ? updatedNote : note));
     }
     case NoteActionTypes.Delete:
       return [...state.filter((note) => note.id !== action.payload.id)];

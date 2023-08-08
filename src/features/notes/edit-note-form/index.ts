@@ -1,1 +1,1 @@
-export { default as EditNoteForm } from "./edit-note-form.component";
+export { default as EditNoteForm } from './edit-note-form.component';

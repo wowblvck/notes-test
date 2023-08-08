@@ -1,6 +1,6 @@
-import { useAppSelector } from "@/store/app.hook";
-import { FormControlLabel, FormGroup, Switch } from "@mui/material";
-import { FilterActionTypes } from "./filter-control.reducer";
+import { useAppSelector } from '@/store/app.hook';
+import { FormControlLabel, FormGroup, Switch } from '@mui/material';
+import { FilterActionTypes } from './filter-control.reducer';
 
 const FilterControl = () => {
   const {
@@ -16,7 +16,7 @@ const FilterControl = () => {
   };
 
   return (
-    <FormGroup sx={{ marginBottom: 2, maxWidth: "215px" }}>
+    <FormGroup sx={{ marginBottom: 2, maxWidth: '215px' }}>
       <FormControlLabel
         control={<Switch checked={filters.important} onChange={handleSwitch} />}
         label="Сначала важные"

@@ -1,6 +1,6 @@
-import { CssBaseline } from "@mui/material";
-import { NotesPage } from "@pages";
-import { Header } from "@features/ui";
+import { CssBaseline } from '@mui/material';
+import { NotesPage } from '@pages';
+import { Header } from '@features/ui';
 
 const App = () => {
   return (

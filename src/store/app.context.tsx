@@ -1,7 +1,7 @@
-import { FilterControlState, Note, filterReducer } from "@features/notes";
-import { FilterActions } from "@features/notes/filter-control/filter-control.reducer";
-import notesReducer, { NoteActions } from "@features/notes/notes.reducer";
-import React from "react";
+import { FilterControlState, Note, filterReducer } from '@features/notes';
+import { FilterActions } from '@features/notes/filter-control/filter-control.reducer';
+import notesReducer, { NoteActions } from '@features/notes/notes.reducer';
+import React from 'react';
 
 type InitialStateType = {
   notes: Note[];
@@ -16,16 +16,16 @@ const initialState: InitialStateType = {
 };
 
 const loadStateFromLocalStorage = (): InitialStateType | null => {
-  const serializedState = localStorage.getItem("appState");
+  const serializedState = localStorage.getItem('appState');
   if (serializedState) {
-    return JSON.parse(serializedState);
+    return JSON.parse(serializedState) as InitialStateType;
   }
   return null;
 };
 
 const saveStateToLocalStorage = (state: InitialStateType): void => {
   const serializedState = JSON.stringify(state);
-  localStorage.setItem("appState", serializedState);
+  localStorage.setItem('appState', serializedState);
 };
 
 const AppContext = React.createContext<{
@@ -51,19 +51,14 @@ type AppProviderProps = {
 };
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  const currentState: InitialStateType =
-    loadStateFromLocalStorage() || initialState;
+  const currentState: InitialStateType = loadStateFromLocalStorage() || initialState;
   const [state, dispatch] = React.useReducer(mainReducer, currentState);
 
   React.useEffect(() => {
     saveStateToLocalStorage(state);
   }, [state]);
 
-  return (
-    <AppContext.Provider value={{ state, dispatch }}>
-      {children}
-    </AppContext.Provider>
-  );
+  return <AppContext.Provider value={{ state, dispatch }}>{children}</AppContext.Provider>;
 };
 
 export { AppProvider, AppContext };
